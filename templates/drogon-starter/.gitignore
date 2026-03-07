@@ -1,0 +1,8 @@
+/build/
+/db_data/
+/uploads/
+.env
+
+# Local-only config (use the tracked *.example.json files as templates)
+/config/config.json
+/src/models/model.json

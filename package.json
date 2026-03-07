@@ -1,0 +1,10 @@
+{
+  "name": "create-drogon-app",
+  "version": "1.0.0",
+  "description": "CLI tool to scaffold Drogon C++ applications",
+  "bin": {
+    "create-drogon-app": "./bin/index.js"
+  },
+  "keywords": ["drogon", "cpp", "cli", "backend"],
+  "license": "MIT"
+}
