@@ -69,11 +69,35 @@ node ./bin/index.js my-service
 
 ## 🧪 Usage
 
-Create a new Drogon project:
+### Interactive (landing UI)
+
+Run with no args to open the landing menu:
+
+```bash
+create-drogon-app
+```
+
+### Create (classic)
+
+Create a new Drogon project (backwards compatible with the old CLI):
 
 ```bash
 npm create drogon-app@latest my-service
 cd my-service
+```
+
+### Commands
+
+List templates:
+
+```bash
+create-drogon-app list
+```
+
+Create using a specific template:
+
+```bash
+create-drogon-app create my-service --template drogon-starter
 ```
 
 The CLI prints basic build commands. For a more complete local setup (recommended), run:
@@ -108,11 +132,29 @@ curl -s http://localhost:3000/health
 
 ## 🗂️ Template details
 
-The template lives at:
+Templates live at:
 
 - `templates/drogon-starter/`
 
 It is copied **as-is** into your new project directory.
+
+### Adding your own templates (no code changes)
+
+Drop a new folder under `templates/` (e.g. `templates/drogon-aws-s3/`).
+The CLI discovers templates dynamically, so it will automatically show up in:
+
+- the landing UI template picker
+- `create-drogon-app list`
+
+Optional: add `template.json` inside the template folder to improve the UI:
+
+```json
+{
+	"name": "Drogon + AWS S3",
+	"description": "Starter with S3 upload integration",
+	"exclude": ["build", "node_modules", ".git"]
+}
+```
 For full template documentation, see:
 
 - `templates/drogon-starter/README.md`

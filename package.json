@@ -1,10 +1,27 @@
 {
   "name": "create-drogon-app",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "CLI tool to scaffold Drogon C++ applications",
+  "main": "bin/index.js",
   "bin": {
-    "create-drogon-app": "./bin/index.js"
+    "create-drogon-app": "bin/index.js"
   },
-  "keywords": ["drogon", "cpp", "cli", "backend"],
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1"
+  },
+  "keywords": [
+    "drogon",
+    "cpp",
+    "cli",
+    "backend"
+  ],
+  "author": "Suryansh Verma",
   "license": "MIT"
 }

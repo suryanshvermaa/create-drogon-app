@@ -1,0 +1,13 @@
+# Keep the npm package small; these are build artifacts or dev-only.
+
+# Template build outputs (Conan/CMake)
+templates/**/build/
+
+# Common caches / deps
+templates/**/node_modules/
+templates/**/.cache/
+templates/**/.conan/
+templates/**/.vscode/
+
+# OS junk
+.DS_Store
