@@ -1,0 +1,11 @@
+[requires]
+drogon/1.9.12
+jwt-cpp/0.7.1
+libxcrypt/4.4.36
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[options]
+drogon/*:with_postgres=True
