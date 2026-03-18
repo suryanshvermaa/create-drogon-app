@@ -8,6 +8,10 @@ templates/**/node_modules/
 templates/**/.cache/
 templates/**/.conan/
 templates/**/.vscode/
+templates/**/db_data/
+templates/**/minio_data/
+minio_data
+db_data
 
 # OS junk
 .DS_Store

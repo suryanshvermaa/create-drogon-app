@@ -1,8 +1,8 @@
-# create-drogon-app
+# create-drogon-app 🚀
 
 Scaffold **Drogon (C++)** backend projects from ready-to-build templates.
 
-## Quick start
+## Quick start ⚡
 
 Create a new project using npm:
 
@@ -22,7 +22,7 @@ If your npm version requires `--` to forward arguments:
 npm create drogon-app@latest -- create my-service -t drogon-starter
 ```
 
-## Usage
+## Usage 🧭
 
 Interactive mode (no arguments):
 
@@ -55,7 +55,7 @@ create-drogon-app --help
 create-drogon-app --version
 ```
 
-## Options
+## Options ⚙️
 
 - `-t, --template <template>`: template ID (folder name under `templates/`)
 - `-y, --yes`: skip prompts and use defaults when possible
@@ -71,7 +71,7 @@ create-drogon-app create my-service -t drogon-jwt-postgres-s3
 create-drogon-app create -y -t drogon-starter
 ```
 
-## Templates
+## Templates 📦
 
 Template IDs are the folder names under `templates/`. If `--template` is not provided, the CLI uses the first template in alphabetical order.
 
@@ -84,7 +84,7 @@ Template IDs are the folder names under `templates/`. If `--template` is not pro
 
 Each generated project includes its own `README.md` with template-specific setup commands.
 
-## Prerequisites
+## Prerequisites ✅
 
 For the generator:
 
@@ -99,16 +99,16 @@ For building/running the generated C++ project:
 - Conan
 - Docker (optional; templates use it for local services like PostgreSQL/MinIO)
 
-## What the CLI copies
+## What the CLI copies 🗂️
 
 The CLI creates the target folder (relative to your current working directory) and copies the selected template into it.
 
 By default it excludes: `.git`, `node_modules`, `build`, `dist`, `.cache`.
 
-## Maintainer docs
+## Maintainer docs 🧑‍💻
 
 See [docs/CODEBASE.md](docs/CODEBASE.md).
 
-## License
+## License 📄
 
 MIT

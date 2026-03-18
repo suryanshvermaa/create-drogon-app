@@ -1,2 +1,4 @@
 node_modules/
 build
+db_data
+minio_data

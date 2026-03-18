@@ -9,7 +9,7 @@
   "files": [
     "bin",
     "src",
-    "templates"
+    "templates/"
   ],
   "dependencies": {
     "@clack/prompts": "^0.11.0",
