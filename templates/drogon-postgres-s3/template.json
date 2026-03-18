@@ -1,0 +1,4 @@
+{
+  "name": "drogon-s3-postgres",
+  "description": "Drogon app with PostgreSQL and AWS S3 integration."
+}

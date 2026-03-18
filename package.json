@@ -1,6 +1,6 @@
 {
   "name": "create-drogon-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI tool to scaffold Drogon C++ applications",
   "main": "bin/index.js",
   "bin": {

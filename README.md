@@ -1,94 +1,46 @@
 # 🚀 create-drogon-app
 
-A tiny Node.js CLI that scaffolds a ready-to-build **Drogon (C++)** backend.
-It copies the template from `templates/drogon-starter` into a new folder.
+Generate a ready-to-build **Drogon (C++)** backend in seconds. ⚡
+
+This is an npm CLI that scaffolds a new project folder from one of the included templates. 🧱
 
 ---
 
-## ✨ What you get
+## ✅ Quick Start
 
-The generated project includes:
-
-- ⚙️ **CMake** project (CMake >= 3.15)
-- 📦 **Conan** dependency management (`drogon/1.9.12`)
-- 🐘 **PostgreSQL** dev database via `docker compose`
-- 🐳 A **Dockerfile** to build/run the app in a container
-- 🩺 A sample `GET /health` route
-- 🔌 Loads `PORT` from `.env` (defaults to `3000`)
-
----
-
-## ✅ Prerequisites
-
-### For the generator
-
-- Node.js (recommended: an active LTS)
-- npm
-
-### For building the generated C++ project
-
-- C++17 toolchain (e.g. GCC/Clang)
-- CMake >= 3.15
-- Python 3 + pip
-- Conan
-- Docker (optional, used for PostgreSQL and/or building the image)
-
----
-
-## 📥 Install
-
-### Option A (recommended): use as a starter via npm
+Create a new service:
 
 ```bash
-npm create drogon-app@latest my-service
+npm create drogon-app@latest
 ```
 
-Then:
+If your npm version requires `--` to pass args:
 
 ```bash
-cd my-service
+npm create drogon-app@latest --
 ```
 
-> If your npm version requires `--` to pass args, use: `npm create drogon-app@latest -- my-service`.
-
-### Option B: use locally from this repo (development)
+Prefer `npx`? (optional)
 
 ```bash
-# from the repo root
-npm install -g .
-create-drogon-app my-service
-```
-
-### Option C: run without installing globally
-
-```bash
-node ./bin/index.js my-service
+npx create-drogon-app
 ```
 
 ---
 
-## 🧪 Usage
+## 🧭 Interactive (Landing UI)
 
-### Interactive (landing UI)
-
-Run with no args to open the landing menu:
+Run with no arguments to open the interactive “landing page” menu:
 
 ```bash
 create-drogon-app
 ```
 
-### Create (classic)
+---
 
-Create a new Drogon project (backwards compatible with the old CLI):
+## 🧩 Templates
 
-```bash
-npm create drogon-app@latest my-service
-cd my-service
-```
-
-### Commands
-
-List templates:
+List available templates:
 
 ```bash
 create-drogon-app list
@@ -100,17 +52,62 @@ Create using a specific template:
 create-drogon-app create my-service --template drogon-starter
 ```
 
-The CLI prints basic build commands. For a more complete local setup (recommended), run:
+---
+
+## 🛠️ Commands
+
+Classic create (backwards compatible):
+
+```bash
+create-drogon-app my-service
+```
+
+Explicit create command:
+
+```bash
+create-drogon-app create my-service
+```
+
+---
+
+## ⚙️ Options
+
+- `-t, --template <name>`: pick a template (use `list` to see names)
+- `-y, --yes`: skip prompts and use defaults when possible
+- `-f, --force`: overwrite the target directory if it already exists
+
+---
+
+## 📦 Prerequisites
+
+### For the generator
+
+- Node.js (recommended: active LTS) 🟩
+- npm
+
+### For building/running the generated C++ project
+
+- C++17 toolchain (GCC/Clang)
+- CMake >= 3.15
+- Python 3 + pip
+- Conan
+- Docker (optional; some templates use it for local services like PostgreSQL) 🐳
+
+---
+
+## 🏗️ After Generation (Build & Run)
+
+Most templates follow this flow (your template README may add extra steps):
 
 ```bash
 # 1) local env + config
 cp .env.example .env
 cp config/config.example.json config/config.json
 
-# 2) (optional) start Postgres
+# 2) (optional) start services (e.g. Postgres)
 docker compose up -d
 
-# 3) install dependencies
+# 3) install C++ deps
 conan profile detect --force
 conan install . --output-folder=build --build=missing -s build_type=Release
 
@@ -118,11 +115,11 @@ conan install . --output-folder=build --build=missing -s build_type=Release
 cmake --preset conan-release
 cmake --build --preset conan-release
 
-# 5) run
+# 5) run (binary name can vary by template)
 ./build/Drogon_Starter
 ```
 
-Hit the health endpoint:
+Health check (template-dependent):
 
 ```bash
 curl -s http://localhost:3000/health
@@ -130,56 +127,20 @@ curl -s http://localhost:3000/health
 
 ---
 
-## 🗂️ Template details
+## ✨ What You Get (Typical)
 
-Templates live at:
-
-- `templates/drogon-starter/`
-
-It is copied **as-is** into your new project directory.
-
-### Adding your own templates (no code changes)
-
-Drop a new folder under `templates/` (e.g. `templates/drogon-aws-s3/`).
-The CLI discovers templates dynamically, so it will automatically show up in:
-
-- the landing UI template picker
-- `create-drogon-app list`
-
-Optional: add `template.json` inside the template folder to improve the UI:
-
-```json
-{
-	"name": "Drogon + AWS S3",
-	"description": "Starter with S3 upload integration",
-	"exclude": ["build", "node_modules", ".git"]
-}
-```
-For full template documentation, see:
-
-- `templates/drogon-starter/README.md`
+- 🧰 CMake project + Conan dependencies
+- 🌐 A sample Drogon route (often `GET /health`)
+- 🧪 A sensible dev setup (may include Docker services depending on template)
+- 🔐 `.env`-based configuration (template-dependent)
 
 ---
 
-## 🛠️ How it works
+## 🧑‍💻 Maintainer Docs
 
-- Entry point: `bin/index.js`
-- It reads the project name from the first CLI argument.
-- It copies `templates/drogon-starter` to `./<projectName>` using Node’s `fs.cpSync(..., { recursive: true })`.
+Want to understand or extend the CLI itself (not the generated templates)?
 
----
-
-## 🧩 Development (this repo)
-
-Typical workflow:
-
-```bash
-# edit files under templates/drogon-starter/
-node ./bin/index.js _tmp_test_app
-rm -rf _tmp_test_app
-```
-
----
+- See [docs/CODEBASE.md](docs/CODEBASE.md)
 
 ## 📄 License
 
