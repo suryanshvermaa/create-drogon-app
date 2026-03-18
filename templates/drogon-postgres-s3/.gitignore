@@ -1,5 +1,5 @@
 build
-/config
+/config/config.json
 *.env
 ./db_data
 ./uploads

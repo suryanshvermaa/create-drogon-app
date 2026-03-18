@@ -1,0 +1,13 @@
+{
+  "rdbms": "postgresql",
+  "host": "127.0.0.1",
+  "port": 5432,
+  "dbname": "drogon_jwt_postgres_s3",
+  "user": "postgres",
+  "passwd": "postgres",
+  "tables": ["users"],
+  "relationships": {
+      "enabled": false,
+      "items": []
+  }
+}

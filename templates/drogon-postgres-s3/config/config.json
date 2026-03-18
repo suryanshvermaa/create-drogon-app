@@ -1,0 +1,14 @@
+{
+  "db_clients": [
+    {
+      "name": "default",
+      "rdbms": "postgresql",
+      "host": "localhost",
+      "port": 5432,
+      "dbname": "drogon_postgres_s3",
+      "user": "postgres",
+      "passwd": "postgres",
+      "connection_number": 1
+    }
+  ]
+}
