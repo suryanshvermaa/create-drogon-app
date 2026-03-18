@@ -1,0 +1,4 @@
+{
+  "name": "drogon-jwt-postgres",
+  "description": "Drogon C++ web template with PostgreSQL and JWT auth"
+}

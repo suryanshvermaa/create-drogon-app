@@ -1,0 +1,17 @@
+[requires]
+drogon/1.9.12
+aws-sdk-cpp/1.11.692
+jwt-cpp/0.7.1
+libxcrypt/4.4.36
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[options]
+drogon/*:with_postgres=True
+aws-sdk-cpp/*:shared=False
+aws-sdk-cpp/*:s3=True
+aws-sdk-cpp/*:s3-crt=False
+aws-sdk-cpp/*:s3-encryption=False
+aws-sdk-cpp/*:min_size=True
