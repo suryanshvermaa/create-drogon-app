@@ -1,4 +1,4 @@
 {
-  "name": "drogon-jwt-postgres-s3",
-  "description": "Drogon C++ web template with PostgreSQL, S3, and JWT auth"
+  "name": "🪣 drogon-jwt-postgres-s3",
+  "description": "Drogon C++ backend with PostgreSQL, JWT auth, and AWS S3 integration (local MinIO via Docker Compose)."
 }
