@@ -12,7 +12,7 @@ services:
       - ./db_data:/var/lib/postgresql/data
       - ./sql:/docker-entrypoint-initdb.d
     networks:
-      - ieee_network
+      - drogon-s3-starter
   s3:
     image: minio/minio:RELEASE.2025-09-07T16-13-09Z
     container_name: minio
@@ -29,8 +29,8 @@ services:
     # The command to start the MinIO server and enable the console
     command: server /data --console-address ":9001"
     networks:
-      - ieee_network
+      - drogon-s3-starter
 
 networks:
-  ieee_network:
+  drogon-s3-starter:
     driver: bridge

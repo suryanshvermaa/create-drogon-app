@@ -33,8 +33,8 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 RUN mkdir -p /app/config
-COPY --from=builder /app/build/IEEE_Conference_Backend /app/build/IEEE_Conference_Backend
+COPY --from=builder /app/build/drogon_jwt_postgres /app/build/drogon_jwt_postgres
 
 EXPOSE 8080
 
-CMD ["/app/build/IEEE_Conference_Backend"]
+CMD ["/app/build/drogon_jwt_postgres"]

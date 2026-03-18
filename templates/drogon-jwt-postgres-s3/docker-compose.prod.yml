@@ -12,8 +12,8 @@ services:
     volumes:
       - ./config/:/app/config/:ro
     networks:
-      - ieee_network
+      - drogon_jwt_postgres_s3
 
 networks:
-  ieee_network:
+  drogon_jwt_postgres_s3:
     driver: bridge

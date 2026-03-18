@@ -12,8 +12,8 @@ services:
     volumes:
       - ./config/:/app/config/:ro
     networks:
-      - ieee_network
+      - drogon-s3-starter
 
 networks:
-  ieee_network:
+  drogon-s3-starter:
     driver: bridge
